@@ -263,6 +263,7 @@ void start_armboot (void)
 
 #ifndef CFG_NO_FLASH
 	/* configure available FLASH banks */
+	// 初始化norflash
 	size = flash_init ();
 	display_flash_config (size);
 #endif /* CFG_NO_FLASH */
@@ -298,6 +299,7 @@ void start_armboot (void)
 
 #if (CONFIG_COMMANDS & CFG_CMD_NAND)
 	puts ("NAND:  ");
+	// 初始化nandflash
 	nand_init();		/* go init the NAND */
 #endif
 

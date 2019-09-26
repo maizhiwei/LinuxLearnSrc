@@ -356,6 +356,7 @@ void do_bootm_rawLinux (ulong addr)
     defined (CONFIG_VFD)
 static void setup_start_tag (bd_t *bd)
 {
+	// 让tag指针指向启动参数约定地址
 	params = (struct tag *) bd->bi_boot_params;
 
 	params->hdr.tag = ATAG_CORE;

@@ -146,8 +146,8 @@ typedef struct image_header {
 	uint32_t	ih_hcrc;	/* Image Header CRC Checksum	*/
 	uint32_t	ih_time;	/* Image Creation Timestamp	*/
 	uint32_t	ih_size;	/* Image Data Size		*/
-	uint32_t	ih_load;	/* Data	 Load  Address		*/
-	uint32_t	ih_ep;		/* Entry Point Address		*/
+	uint32_t	ih_load;	/* Data	 Load  Address		(内核运行所需的加载地址)*/
+	uint32_t	ih_ep;		/* Entry Point Address(启动内核的函数地址)		*/
 	uint32_t	ih_dcrc;	/* Image Data CRC Checksum	*/
 	uint8_t		ih_os;		/* Operating System		*/
 	uint8_t		ih_arch;	/* CPU architecture		*/

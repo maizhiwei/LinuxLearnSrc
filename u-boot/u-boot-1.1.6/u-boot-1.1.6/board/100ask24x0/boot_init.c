@@ -453,6 +453,8 @@ int CopyCode2Ram(unsigned long start_addr, unsigned char *buf, int size)
     unsigned int *pdwSrc;
     int i;
 
+	// nor flash启动时，_start运行在0地址上
+	// nand flash启动时，_start也运行在0地址上
     if (bBootFrmNORFlash())
     {
         pdwDest = (unsigned int *)buf;
