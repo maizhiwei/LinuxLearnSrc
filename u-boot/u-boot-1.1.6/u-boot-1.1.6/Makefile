@@ -114,6 +114,7 @@ export obj src
 ifeq ($(OBJTREE)/include/config.mk,$(wildcard $(OBJTREE)/include/config.mk))
 
 # load ARCH, BOARD, and CPU configuration
+# make 需要 include/config.mk文件（该文件包含 board cpu arch信息），而该文件由make xxx_config生成的
 include $(OBJTREE)/include/config.mk
 export	ARCH CPU BOARD VENDOR SOC
 
@@ -161,6 +162,7 @@ endif
 export	CROSS_COMPILE
 
 # load other configuration
+# 该文件会去board cpu arch里面去include对应的config.mk文件
 include $(TOPDIR)/config.mk
 
 #########################################################################
@@ -258,23 +260,32 @@ $(obj)u-boot.img:	$(obj)u-boot.bin
 
 $(obj)u-boot.dis:	$(obj)u-boot
 		$(OBJDUMP) -d $< > $@
-
+# $(OBJDUMP) -x $(LIBS)为从所有库里头的头文件信息
+# sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p' 
+# 查找.*__u_boot_cmd_.*的字符，并把__u_boot_cmd_.*标识为\1,然后输出-u\1格式字符，排序，并且把相邻一样的过滤
+# 经过验证 UNDEF_SYM 为空，不予理会
+# 其他的命令其实就是把所有库按照 lds链接成 u-boot(elf格式)
 $(obj)u-boot:		depend version $(SUBDIRS) $(OBJS) $(LIBS) $(LDSCRIPT)
 		UNDEF_SYM=`$(OBJDUMP) -x $(LIBS) |sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
 		cd $(LNDIR) && $(LD) $(LDFLAGS) $$UNDEF_SYM $(__OBJS) \
 			--start-group $(__LIBS) --end-group $(PLATFORM_LIBS) \
 			-Map u-boot.map -o u-boot
-
+		@echo $(UNDEF_SYM)
+# 编译start.o
 $(OBJS):
 	echo $(OBJS)	
 		$(MAKE) -C cpu/$(CPU) $(if $(REMOTE_BUILD),$@,$(notdir $@))
 
+# 逐个生成lib
 $(LIBS):
 		$(MAKE) -C $(dir $(subst $(obj),,$@))
 
 usb:
 	$(MAKE) -C drivers/usb
 
+# 此处$(SUBDIRS)为tools examples post post/cpu
+# 进入逐一进入上述目录执行make all
+# 执行2
 $(SUBDIRS):
 		$(MAKE) -C $@ all
 
@@ -300,6 +311,12 @@ updater:
 env:
 		$(MAKE) -C tools/env all || exit 1
 
+# 此处$(SUBDIRS)为tools examples post post/cpu
+# $(obj)为空
+# $dir 表示其访问的是shell变量
+# 逐一到达$(SUBDIRS)文件夹中，执行make _depend
+# 实际运行时，发现都是do nothing的
+# 执行1
 depend dep:
 		for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir _depend ; done
 

@@ -1,0 +1,953 @@
+for dir in tools examples post post/cpu ; do make -C $dir _depend ; done
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/tools'
+ln -s ../common/environment.c environment.c
+ln -s ../lib_generic/crc32.c crc32.c
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/tools'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/tools'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/tools'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/examples'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/examples'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/examples'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/examples'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/post'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/post'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/post'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/post'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/post/cpu'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/post/cpu'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/post/cpu'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/post/cpu'
+make -C tools all
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/tools'
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -c -o img2srec.o img2srec.c
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O  -o img2srec img2srec.o
+strip img2srec
+gcc -g -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -c -o mkimage.o mkimage.c
+gcc -g -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -c -o crc32.o crc32.c
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O  -o mkimage mkimage.o crc32.o
+strip mkimage
+gcc -g -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -c -o envcrc.o envcrc.c
+gcc -g  -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -c -o environment.o environment.c
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -o envcrc envcrc.o crc32.o environment.o
+gcc -g -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -c -o gen_eth_addr.o gen_eth_addr.c
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O  -o gen_eth_addr gen_eth_addr.o
+strip gen_eth_addr
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O -c -o bmp_logo.o bmp_logo.c
+bmp_logo.c: In function ‘main’:
+bmp_logo.c:71: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+bmp_logo.c:73: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+bmp_logo.c:75: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+bmp_logo.c:77: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result
+gcc -Wall -pedantic -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include2 -idirafter /home/book/tmp/u-boot-1.1.6_100ask/include -DTEXT_BASE=0x33F80000 -DUSE_HOSTCC -O  -o bmp_logo bmp_logo.o
+strip bmp_logo
+./bmp_logo logos/denx.bmp >/home/book/tmp/u-boot-1.1.6_100ask/include/bmp_logo.h
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/tools'
+make -C examples all
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/examples'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o hello_world.o hello_world.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o stubs.o stubs.c
+arm-linux-ar crv libstubs.a stubs.o
+a - stubs.o
+arm-linux-ld -g  -Ttext 0xc100000 \
+			-o hello_world -e hello_world hello_world.o libstubs.a \
+			-L/work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5 -lgcc
+arm-linux-objcopy -O srec hello_world hello_world.srec 2>/dev/null
+arm-linux-objcopy -O binary hello_world hello_world.bin 2>/dev/null
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/examples'
+make -C post all
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/post'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o cache_8xx.o cache_8xx.S
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cache.o cache.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o codec.o codec.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cpu.o cpu.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dsp.o dsp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ether.o ether.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o i2c.o i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o memory.o memory.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o post.o post.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rtc.o rtc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o spr.o spr.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sysmon.o sysmon.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o tests.o tests.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o uart.o uart.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usb.o usb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o watchdog.o watchdog.c
+arm-linux-ar crv libpost.a cache_8xx.o cache.o codec.o cpu.o dsp.o ether.o i2c.o memory.o post.o rtc.o spr.o sysmon.o tests.o uart.o usb.o watchdog.o
+a - cache_8xx.o
+a - cache.o
+a - codec.o
+a - cpu.o
+a - dsp.o
+a - ether.o
+a - i2c.o
+a - memory.o
+a - post.o
+a - rtc.o
+a - spr.o
+a - sysmon.o
+a - tests.o
+a - uart.o
+a - usb.o
+a - watchdog.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/post'
+make -C post/cpu all
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/post/cpu'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o asm.o asm.S
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmp.o cmp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmpi.o cmpi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o two.o two.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o twox.o twox.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o three.o three.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o threex.o threex.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o threei.o threei.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o andi.o andi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o srawi.o srawi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rlwnm.o rlwnm.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rlwinm.o rlwinm.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rlwimi.o rlwimi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o store.o store.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o load.o load.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cr.o cr.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o b.o b.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o multi.o multi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o string.o string.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o complex.o complex.c
+arm-linux-ar crv libcpu.a asm.o cmp.o cmpi.o two.o twox.o three.o threex.o threei.o andi.o srawi.o rlwnm.o rlwinm.o rlwimi.o store.o load.o cr.o b.o multi.o string.o complex.o
+a - asm.o
+a - cmp.o
+a - cmpi.o
+a - two.o
+a - twox.o
+a - three.o
+a - threex.o
+a - threei.o
+a - andi.o
+a - srawi.o
+a - rlwnm.o
+a - rlwinm.o
+a - rlwimi.o
+a - store.o
+a - load.o
+a - cr.o
+a - b.o
+a - multi.o
+a - string.o
+a - complex.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/post/cpu'
+echo cpu/arm920t/start.o	
+cpu/arm920t/start.o
+make -C cpu/arm920t start.o
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o start.o start.S
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t'
+make -C lib_generic/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_generic'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_generic'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_generic'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bzlib.o bzlib.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bzlib_crctable.o bzlib_crctable.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bzlib_decompress.o bzlib_decompress.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bzlib_randtable.o bzlib_randtable.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bzlib_huffman.o bzlib_huffman.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o crc32.o crc32.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ctype.o ctype.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o display_options.o display_options.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ldiv.o ldiv.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o string.o string.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o vsprintf.o vsprintf.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o zlib.o zlib.c
+arm-linux-ar crv libgeneric.a bzlib.o bzlib_crctable.o bzlib_decompress.o bzlib_randtable.o bzlib_huffman.o crc32.o ctype.o display_options.o ldiv.o string.o vsprintf.o zlib.o
+a - bzlib.o
+a - bzlib_crctable.o
+a - bzlib_decompress.o
+a - bzlib_randtable.o
+a - bzlib_huffman.o
+a - crc32.o
+a - ctype.o
+a - display_options.o
+a - ldiv.o
+a - string.o
+a - vsprintf.o
+a - zlib.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_generic'
+make -C board/100ask24x0/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/board/100ask24x0'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/board/100ask24x0'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/board/100ask24x0'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o 100ask24x0.o 100ask24x0.c
+100ask24x0.c: In function `board_init':
+100ask24x0.c:39: warning: unused variable `clk_power'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o boot_init.o boot_init.c
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o lowlevel_init.o lowlevel_init.S
+arm-linux-ar crv lib100ask24x0.a 100ask24x0.o boot_init.o lowlevel_init.o
+a - 100ask24x0.o
+a - boot_init.o
+a - lowlevel_init.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/board/100ask24x0'
+make -C cpu/arm920t/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cpu.o cpu.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o interrupts.o interrupts.c
+arm-linux-ar crv libarm920t.a cpu.o interrupts.o
+a - cpu.o
+a - interrupts.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t'
+make -C cpu/arm920t/s3c24x0/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t/s3c24x0'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t/s3c24x0'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t/s3c24x0'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o i2c.o i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o interrupts.o interrupts.c
+interrupts.c:323: warning: function declaration isn't a prototype
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o speed.o speed.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usb_ohci.o usb_ohci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_flash.o nand_flash.c
+arm-linux-ar crv libs3c24x0.a i2c.o interrupts.o serial.o speed.o usb_ohci.o nand_flash.o
+a - i2c.o
+a - interrupts.o
+a - serial.o
+a - speed.o
+a - usb_ohci.o
+a - nand_flash.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/cpu/arm920t/s3c24x0'
+make -C lib_arm/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_arm'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_arm'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_arm'
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o _ashldi3.o _ashldi3.S
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o _ashrdi3.o _ashrdi3.S
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o _divsi3.o _divsi3.S
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o _modsi3.o _modsi3.S
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o _udivsi3.o _udivsi3.S
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -c -o _umodsi3.o _umodsi3.S
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o armlinux.o armlinux.c
+armlinux.c: In function `do_bootm_rawLinux':
+armlinux.c:275: warning: unused variable `checksum'
+armlinux.c:279: warning: unused variable `hdr'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o board.o board.c
+board.c: In function `start_armboot':
+board.c:363: warning: implicit declaration of function `Port_Init'
+board.c:368: warning: implicit declaration of function `usb_init'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cache.o cache.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o div0.o div0.c
+arm-linux-ar crv libarm.a _ashldi3.o _ashrdi3.o _divsi3.o _modsi3.o _udivsi3.o _umodsi3.o armlinux.o board.o cache.o div0.o
+a - _ashldi3.o
+a - _ashrdi3.o
+a - _divsi3.o
+a - _modsi3.o
+a - _udivsi3.o
+a - _umodsi3.o
+a - armlinux.o
+a - board.o
+a - cache.o
+a - div0.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/lib_arm'
+make -C fs/cramfs/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/cramfs'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/cramfs'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/cramfs'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cramfs.o cramfs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o uncompress.o uncompress.c
+arm-linux-ar crv libcramfs.a cramfs.o uncompress.o
+a - cramfs.o
+a - uncompress.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/cramfs'
+make -C fs/fat/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fat'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fat'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fat'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o fat.o fat.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o file.o file.c
+arm-linux-ar crv libfat.a fat.o file.o
+a - fat.o
+a - file.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fat'
+make -C fs/fdos/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fdos'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fdos'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fdos'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o fat.o fat.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o vfat.o vfat.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dev.o dev.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o fdos.o fdos.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o fs.o fs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o subdir.o subdir.c
+arm-linux-ar crv libfdos.a fat.o vfat.o dev.o fdos.o fs.o subdir.o
+a - fat.o
+a - vfat.o
+a - dev.o
+a - fdos.o
+a - fs.o
+a - subdir.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/fdos'
+make -C fs/jffs2/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/jffs2'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/jffs2'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/jffs2'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o jffs2_1pass.o jffs2_1pass.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o compr_rtime.o compr_rtime.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o compr_rubin.o compr_rubin.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o compr_zlib.o compr_zlib.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mini_inflate.o mini_inflate.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o compr_lzo.o compr_lzo.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o compr_lzari.o compr_lzari.c
+arm-linux-ar crv libjffs2.a jffs2_1pass.o compr_rtime.o compr_rubin.o compr_zlib.o mini_inflate.o compr_lzo.o compr_lzari.o
+a - jffs2_1pass.o
+a - compr_rtime.o
+a - compr_rubin.o
+a - compr_zlib.o
+a - mini_inflate.o
+a - compr_lzo.o
+a - compr_lzari.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/jffs2'
+make -C fs/reiserfs/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/reiserfs'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/reiserfs'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/reiserfs'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o reiserfs.o reiserfs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dev.o dev.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mode_string.o mode_string.c
+arm-linux-ar crv libreiserfs.a reiserfs.o dev.o mode_string.o
+a - reiserfs.o
+a - dev.o
+a - mode_string.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/reiserfs'
+make -C fs/ext2/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/ext2'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/ext2'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/ext2'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ext2fs.o ext2fs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dev.o dev.c
+arm-linux-ar crv libext2fs.a ext2fs.o dev.o
+a - ext2fs.o
+a - dev.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/fs/ext2'
+make -C net/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/net'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/net'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/net'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o net.o net.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o tftp.o tftp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bootp.o bootp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rarp.o rarp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o eth.o eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nfs.o nfs.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sntp.o sntp.c
+arm-linux-ar crv libnet.a net.o tftp.o bootp.o rarp.o eth.o nfs.o sntp.o
+a - net.o
+a - tftp.o
+a - bootp.o
+a - rarp.o
+a - eth.o
+a - nfs.o
+a - sntp.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/net'
+make -C disk/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/disk'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/disk'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/disk'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o part.o part.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o part_mac.o part_mac.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o part_dos.o part_dos.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o part_iso.o part_iso.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o part_amiga.o part_amiga.c
+arm-linux-ar crv libdisk.a part.o part_mac.o part_dos.o part_iso.o part_amiga.o
+a - part.o
+a - part_mac.o
+a - part_dos.o
+a - part_iso.o
+a - part_amiga.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/disk'
+make -C rtc/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/rtc'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/rtc'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/rtc'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o date.o date.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bf533_rtc.o bf533_rtc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds12887.o ds12887.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1302.o ds1302.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1306.o ds1306.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1307.o ds1307.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1337.o ds1337.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1374.o ds1374.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1556.o ds1556.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds164x.o ds164x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds174x.o ds174x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o m41t11.o m41t11.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o max6900.o max6900.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o m48t35ax.o m48t35ax.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mc146818.o mc146818.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mk48t59.o mk48t59.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mpc5xxx.o mpc5xxx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mpc8xx.o mpc8xx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pcf8563.o pcf8563.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o s3c24x0_rtc.o s3c24x0_rtc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rs5c372.o rs5c372.c
+arm-linux-ar crv librtc.a date.o bf533_rtc.o ds12887.o ds1302.o ds1306.o ds1307.o ds1337.o ds1374.o ds1556.o ds164x.o ds174x.o m41t11.o max6900.o m48t35ax.o mc146818.o mk48t59.o mpc5xxx.o mpc8xx.o pcf8563.o s3c24x0_rtc.o rs5c372.o
+a - date.o
+a - bf533_rtc.o
+a - ds12887.o
+a - ds1302.o
+a - ds1306.o
+a - ds1307.o
+a - ds1337.o
+a - ds1374.o
+a - ds1556.o
+a - ds164x.o
+a - ds174x.o
+a - m41t11.o
+a - max6900.o
+a - m48t35ax.o
+a - mc146818.o
+a - mk48t59.o
+a - mpc5xxx.o
+a - mpc8xx.o
+a - pcf8563.o
+a - s3c24x0_rtc.o
+a - rs5c372.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/rtc'
+make -C dtt/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/dtt'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/dtt'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/dtt'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o lm75.o lm75.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ds1621.o ds1621.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o adm1021.o adm1021.c
+arm-linux-ar crv libdtt.a lm75.o ds1621.o adm1021.o
+a - lm75.o
+a - ds1621.o
+a - adm1021.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/dtt'
+make -C drivers/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o 3c589.o 3c589.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o 5701rls.o 5701rls.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ali512x.o ali512x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o atmel_usart.o atmel_usart.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bcm570x.o bcm570x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bcm570x_autoneg.o bcm570x_autoneg.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cfb_console.o cfb_console.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cfi_flash.o cfi_flash.c
+cfi_flash.c: In function `flash_detect_legacy':
+cfi_flash.c:1591: warning: implicit declaration of function `jedec_flash_probe'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o jedec_flash.o jedec_flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cs8900.o cs8900.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ct69000.o ct69000.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dataflash.o dataflash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dc2114x.o dc2114x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dm9000x.o dm9000x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o e1000.o e1000.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o eepro100.o eepro100.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o i8042.o i8042.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o inca-ip_sw.o inca-ip_sw.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o keyboard.o keyboard.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o lan91c96.o lan91c96.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o natsemi.o natsemi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ne2000.o ne2000.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o netarm_eth.o netarm_eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o netconsole.o netconsole.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ns16550.o ns16550.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ns8382x.o ns8382x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ns87308.o ns87308.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ns7520_eth.o ns7520_eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o omap1510_i2c.o omap1510_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o omap24xx_i2c.o omap24xx_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pci.o pci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pci_auto.o pci_auto.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pci_indirect.o pci_indirect.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pcnet.o pcnet.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o plb2800_eth.o plb2800_eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ps2ser.o ps2ser.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ps2mult.o ps2mult.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pc_keyb.o pc_keyb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rtl8019.o rtl8019.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rtl8139.o rtl8139.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rtl8169.o rtl8169.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o s3c4510b_eth.o s3c4510b_eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o s3c4510b_uart.o s3c4510b_uart.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sed13806.o sed13806.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sed156x.o sed156x.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial_max3100.o serial_max3100.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial_pl010.o serial_pl010.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial_pl011.o serial_pl011.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial_xuartlite.o serial_xuartlite.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sl811_usb.o sl811_usb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sm501.o sm501.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o smc91111.o smc91111.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o smiLynxEM.o smiLynxEM.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o status_led.o status_led.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o sym53c8xx.o sym53c8xx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ahci.o ahci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ti_pci1410a.o ti_pci1410a.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o tigon3.o tigon3.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o tsec.o tsec.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbdcore.o usbdcore.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbdcore_ep0.o usbdcore_ep0.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbdcore_omap1510.o usbdcore_omap1510.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbtty.o usbtty.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o videomodes.o videomodes.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o w83c553f.o w83c553f.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ks8695eth.o ks8695eth.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o pxa_pcmcia.o pxa_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o mpc8xx_pcmcia.o mpc8xx_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o tqm8xx_pcmcia.o tqm8xx_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o rpx_pcmcia.o rpx_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o fsl_i2c.o fsl_i2c.c
+arm-linux-ar crv libdrivers.a 3c589.o 5701rls.o ali512x.o atmel_usart.o bcm570x.o bcm570x_autoneg.o cfb_console.o cfi_flash.o jedec_flash.o cs8900.o ct69000.o dataflash.o dc2114x.o dm9000x.o e1000.o eepro100.o i8042.o inca-ip_sw.o keyboard.o lan91c96.o natsemi.o ne2000.o netarm_eth.o netconsole.o ns16550.o ns8382x.o ns87308.o ns7520_eth.o omap1510_i2c.o omap24xx_i2c.o pci.o pci_auto.o pci_indirect.o pcnet.o plb2800_eth.o ps2ser.o ps2mult.o pc_keyb.o rtl8019.o rtl8139.o rtl8169.o s3c4510b_eth.o s3c4510b_uart.o sed13806.o sed156x.o serial.o serial_max3100.o serial_pl010.o serial_pl011.o serial_xuartlite.o sl811_usb.o sm501.o smc91111.o smiLynxEM.o status_led.o sym53c8xx.o ahci.o ti_pci1410a.o tigon3.o tsec.o usbdcore.o usbdcore_ep0.o usbdcore_omap1510.o usbtty.o videomodes.o w83c553f.o ks8695eth.o pxa_pcmcia.o mpc8xx_pcmcia.o tqm8xx_pcmcia.o rpx_pcmcia.o fsl_i2c.o
+a - 3c589.o
+a - 5701rls.o
+a - ali512x.o
+a - atmel_usart.o
+a - bcm570x.o
+a - bcm570x_autoneg.o
+a - cfb_console.o
+a - cfi_flash.o
+a - jedec_flash.o
+a - cs8900.o
+a - ct69000.o
+a - dataflash.o
+a - dc2114x.o
+a - dm9000x.o
+a - e1000.o
+a - eepro100.o
+a - i8042.o
+a - inca-ip_sw.o
+a - keyboard.o
+a - lan91c96.o
+a - natsemi.o
+a - ne2000.o
+a - netarm_eth.o
+a - netconsole.o
+a - ns16550.o
+a - ns8382x.o
+a - ns87308.o
+a - ns7520_eth.o
+a - omap1510_i2c.o
+a - omap24xx_i2c.o
+a - pci.o
+a - pci_auto.o
+a - pci_indirect.o
+a - pcnet.o
+a - plb2800_eth.o
+a - ps2ser.o
+a - ps2mult.o
+a - pc_keyb.o
+a - rtl8019.o
+a - rtl8139.o
+a - rtl8169.o
+a - s3c4510b_eth.o
+a - s3c4510b_uart.o
+a - sed13806.o
+a - sed156x.o
+a - serial.o
+a - serial_max3100.o
+a - serial_pl010.o
+a - serial_pl011.o
+a - serial_xuartlite.o
+a - sl811_usb.o
+a - sm501.o
+a - smc91111.o
+a - smiLynxEM.o
+a - status_led.o
+a - sym53c8xx.o
+a - ahci.o
+a - ti_pci1410a.o
+a - tigon3.o
+a - tsec.o
+a - usbdcore.o
+a - usbdcore_ep0.o
+a - usbdcore_omap1510.o
+a - usbtty.o
+a - videomodes.o
+a - w83c553f.o
+a - ks8695eth.o
+a - pxa_pcmcia.o
+a - mpc8xx_pcmcia.o
+a - tqm8xx_pcmcia.o
+a - rpx_pcmcia.o
+a - fsl_i2c.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers'
+make -C drivers/nand/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand.o nand.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_base.o nand_base.c
+nand_base.c: In function `nand_write_calmecc':
+nand_base.c:1796: warning: 'i' might be used uninitialized in this function
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_ids.o nand_ids.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_ecc.o nand_ecc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_bbt.o nand_bbt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_util.o nand_util.c
+arm-linux-ar crv libnand.a nand.o nand_base.o nand_ids.o nand_ecc.o nand_bbt.o nand_util.o
+a - nand.o
+a - nand_base.o
+a - nand_ids.o
+a - nand_ecc.o
+a - nand_bbt.o
+a - nand_util.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand'
+make -C drivers/nand_legacy/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand_legacy'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand_legacy'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand_legacy'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o nand_legacy.o nand_legacy.c
+arm-linux-ar crv libnand_legacy.a nand_legacy.o
+a - nand_legacy.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/nand_legacy'
+make -C drivers/usb/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/usb'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/usb'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/usb'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbin.o usbin.c
+usbin.c: In function `PrepareEp1Fifo':
+usbin.c:65: warning: suggest parentheses around arithmetic in operand of |
+usbin.c: In function `Ep1Handler':
+usbin.c:72: warning: unused variable `i'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usblib.o usblib.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbmain.o usbmain.c
+usbmain.c: In function `UsbdMain':
+usbmain.c:32: warning: unused variable `i'
+usbmain.c:33: warning: unused variable `tmp1'
+usbmain.c:34: warning: unused variable `oldTmp1'
+usbmain.c: In function `IsrUsbd':
+usbmain.c:120: warning: implicit declaration of function `ClearPending'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbout.o usbout.c
+usbout.c: In function `IsrDma2':
+usbout.c:188: warning: implicit declaration of function `ClearPending'
+usbout.c: At top level:
+usbout.c:158: warning: 'PrintEpoPkt' defined but not used
+usbout.c:66: warning: 'tempBuf' defined but not used
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbsetup.o usbsetup.c
+usbsetup.c: In function `Ep0Handler':
+usbsetup.c:128: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:133: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:147: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:169: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:174: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:183: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:203: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:208: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:231: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:238: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:275: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:281: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:289: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:300: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:307: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:314: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:336: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:369: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:377: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:389: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:405: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:412: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:420: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:431: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:439: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:447: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:455: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:462: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:470: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:477: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:485: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:491: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:499: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:507: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:515: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:525: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:535: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:543: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:554: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:563: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:571: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:577: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:583: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:589: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:595: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:601: warning: suggest parentheses around arithmetic in operand of |
+usbsetup.c:110: warning: unused variable `i'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usbinit.o usbinit.c
+usbinit.c: In function `awaitkey':
+usbinit.c:57: warning: unused variable `c'
+usbinit.c: In function `usb_init':
+usbinit.c:220: warning: unused variable `i'
+usbinit.c:221: warning: unused variable `key'
+usbinit.c:222: warning: unused variable `divn_upll'
+usbinit.c: In function `Clk0_Enable':
+usbinit.c:460: warning: suggest parentheses around arithmetic in operand of |
+usbinit.c:461: warning: suggest parentheses around arithmetic in operand of |
+usbinit.c: In function `Clk1_Enable':
+usbinit.c:465: warning: suggest parentheses around arithmetic in operand of |
+usbinit.c:466: warning: suggest parentheses around arithmetic in operand of |
+arm-linux-ar crv libusb.a usbin.o usblib.o usbmain.o usbout.o usbsetup.o usbinit.o
+a - usbin.o
+a - usblib.o
+a - usbmain.o
+a - usbout.o
+a - usbsetup.o
+a - usbinit.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/usb'
+make -C drivers/sk98lin/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/sk98lin'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/sk98lin'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/sk98lin'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skge.o skge.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skaddr.o skaddr.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgehwt.o skgehwt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgeinit.o skgeinit.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgepnmi.o skgepnmi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skgesirq.o skgesirq.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o ski2c.o ski2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o sklm80.o sklm80.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skqueue.o skqueue.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skrlmt.o skrlmt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o sktimer.o sktimer.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skvpd.o skvpd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skxmac2.o skxmac2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o skcsum.o skcsum.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o uboot_skb.o uboot_skb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -I. -DSK_USE_CSUM  -c -o uboot_drv.o uboot_drv.c
+arm-linux-ar crv libsk98lin.a skge.o skaddr.o skgehwt.o skgeinit.o skgepnmi.o skgesirq.o ski2c.o sklm80.o skqueue.o skrlmt.o sktimer.o skvpd.o skxmac2.o skcsum.o uboot_skb.o uboot_drv.o
+a - skge.o
+a - skaddr.o
+a - skgehwt.o
+a - skgeinit.o
+a - skgepnmi.o
+a - skgesirq.o
+a - ski2c.o
+a - sklm80.o
+a - skqueue.o
+a - skrlmt.o
+a - sktimer.o
+a - skvpd.o
+a - skxmac2.o
+a - skcsum.o
+a - uboot_skb.o
+a - uboot_drv.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/drivers/sk98lin'
+make -C common/
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/common'
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/common'
+make[1]: Entering directory `/home/book/tmp/u-boot-1.1.6_100ask/common'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o main.o main.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ACEX1K.o ACEX1K.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o altera.o altera.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o bedbug.o bedbug.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o circbuf.o circbuf.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_ace.o cmd_ace.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_autoscript.o cmd_autoscript.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_bdinfo.o cmd_bdinfo.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_bedbug.o cmd_bedbug.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_bmp.o cmd_bmp.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_boot.o cmd_boot.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_bootm.o cmd_bootm.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_cache.o cmd_cache.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_console.o cmd_console.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_date.o cmd_date.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_dcr.o cmd_dcr.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_diag.o cmd_diag.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_display.o cmd_display.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_doc.o cmd_doc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_dtt.o cmd_dtt.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_eeprom.o cmd_eeprom.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_elf.o cmd_elf.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_ext2.o cmd_ext2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_fat.o cmd_fat.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_fdc.o cmd_fdc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_fdos.o cmd_fdos.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_flash.o cmd_flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_fpga.o cmd_fpga.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_i2c.o cmd_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_ide.o cmd_ide.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_immap.o cmd_immap.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_itest.o cmd_itest.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_jffs2.o cmd_jffs2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_load.o cmd_load.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_log.o cmd_log.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_mem.o cmd_mem.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_mii.o cmd_mii.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_misc.o cmd_misc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_mmc.o cmd_mmc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_nand.o cmd_nand.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_net.o cmd_net.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_nvedit.o cmd_nvedit.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_pci.o cmd_pci.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_pcmcia.o cmd_pcmcia.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_portio.o cmd_portio.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_reginfo.o cmd_reginfo.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_reiser.o cmd_reiser.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_scsi.o cmd_scsi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_spi.o cmd_spi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_universe.o cmd_universe.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_usb.o cmd_usb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_usbslave.o cmd_usbslave.c
+cmd_usbslave.c: In function `do_usbslave':
+cmd_usbslave.c:64: warning: passing arg 1 of `usb_receive' makes pointer from integer without a cast
+cmd_usbslave.c:24: warning: unused variable `i'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_menu.o cmd_menu.c
+cmd_menu.c:57: warning: function declaration isn't a prototype
+cmd_menu.c: In function `param_menu_shell':
+cmd_menu.c:72: warning: unused variable `name_buf'
+cmd_menu.c:73: warning: unused variable `val_buf'
+cmd_menu.c: In function `main_menu_usage':
+cmd_menu.c:143: warning: implicit declaration of function `bBootFrmNORFlash'
+cmd_menu.c: In function `menu_shell':
+cmd_menu.c:267: warning: passing arg 2 of `memsize_parse2' from incompatible pointer type
+cmd_menu.c:167: warning: unused variable `offset'
+cmd_menu.c:168: warning: unused variable `mtd'
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_vfd.o cmd_vfd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o command.o command.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o console.o console.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o devices.o devices.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o dlmalloc.o dlmalloc.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o docecc.o docecc.c
+arm-linux-gcc  -D__ASSEMBLY__ -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wa,--no-warn \
+		-DENV_CRC=0 \
+		-c -o environment.o environment.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_common.o env_common.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_nand.o env_nand.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_dataflash.o env_dataflash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_flash.o env_flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_eeprom.o env_eeprom.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_nvram.o env_nvram.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o env_nowhere.o env_nowhere.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o exports.o exports.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o flash.o flash.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o fpga.o fpga.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o ft_build.o ft_build.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o hush.o hush.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o kgdb.o kgdb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o lcd.o lcd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o lists.o lists.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o lynxkdi.o lynxkdi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o memsize.o memsize.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o miiphybb.o miiphybb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o miiphyutil.o miiphyutil.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o s_record.o s_record.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o serial.o serial.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o soft_i2c.o soft_i2c.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o soft_spi.o soft_spi.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o spartan2.o spartan2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o spartan3.o spartan3.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usb.o usb.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usb_kbd.o usb_kbd.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o usb_storage.o usb_storage.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o virtex2.o virtex2.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o xilinx.o xilinx.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o crc16.o crc16.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o xyzModem.o xyzModem.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_mac.o cmd_mac.c
+arm-linux-gcc -g  -Os   -fno-strict-aliasing  -fno-common -ffixed-r8 -msoft-float -malignment-traps -D__KERNEL__ -DTEXT_BASE=0x33F80000  -I/home/book/tmp/u-boot-1.1.6_100ask/include -fno-builtin -ffreestanding -nostdinc -isystem /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5/include -pipe  -DCONFIG_ARM -D__ARM__ -march=armv4 -mapcs-32 -Wall -Wstrict-prototypes -c -o cmd_hello.o cmd_hello.c
+arm-linux-ar crv libcommon.a main.o ACEX1K.o altera.o bedbug.o circbuf.o cmd_ace.o cmd_autoscript.o cmd_bdinfo.o cmd_bedbug.o cmd_bmp.o cmd_boot.o cmd_bootm.o cmd_cache.o cmd_console.o cmd_date.o cmd_dcr.o cmd_diag.o cmd_display.o cmd_doc.o cmd_dtt.o cmd_eeprom.o cmd_elf.o cmd_ext2.o cmd_fat.o cmd_fdc.o cmd_fdos.o cmd_flash.o cmd_fpga.o cmd_i2c.o cmd_ide.o cmd_immap.o cmd_itest.o cmd_jffs2.o cmd_load.o cmd_log.o cmd_mem.o cmd_mii.o cmd_misc.o cmd_mmc.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_pci.o cmd_pcmcia.o cmd_portio.o cmd_reginfo.o cmd_reiser.o cmd_scsi.o cmd_spi.o cmd_universe.o cmd_usb.o cmd_usbslave.o cmd_menu.o cmd_vfd.o command.o console.o devices.o dlmalloc.o docecc.o environment.o env_common.o env_nand.o env_dataflash.o env_flash.o env_eeprom.o env_nvram.o env_nowhere.o exports.o flash.o fpga.o ft_build.o hush.o kgdb.o lcd.o lists.o lynxkdi.o memsize.o miiphybb.o miiphyutil.o s_record.o serial.o soft_i2c.o soft_spi.o spartan2.o spartan3.o usb.o usb_kbd.o usb_storage.o virtex2.o xilinx.o crc16.o xyzModem.o cmd_mac.o cmd_hello.o
+a - main.o
+a - ACEX1K.o
+a - altera.o
+a - bedbug.o
+a - circbuf.o
+a - cmd_ace.o
+a - cmd_autoscript.o
+a - cmd_bdinfo.o
+a - cmd_bedbug.o
+a - cmd_bmp.o
+a - cmd_boot.o
+a - cmd_bootm.o
+a - cmd_cache.o
+a - cmd_console.o
+a - cmd_date.o
+a - cmd_dcr.o
+a - cmd_diag.o
+a - cmd_display.o
+a - cmd_doc.o
+a - cmd_dtt.o
+a - cmd_eeprom.o
+a - cmd_elf.o
+a - cmd_ext2.o
+a - cmd_fat.o
+a - cmd_fdc.o
+a - cmd_fdos.o
+a - cmd_flash.o
+a - cmd_fpga.o
+a - cmd_i2c.o
+a - cmd_ide.o
+a - cmd_immap.o
+a - cmd_itest.o
+a - cmd_jffs2.o
+a - cmd_load.o
+a - cmd_log.o
+a - cmd_mem.o
+a - cmd_mii.o
+a - cmd_misc.o
+a - cmd_mmc.o
+a - cmd_nand.o
+a - cmd_net.o
+a - cmd_nvedit.o
+a - cmd_pci.o
+a - cmd_pcmcia.o
+a - cmd_portio.o
+a - cmd_reginfo.o
+a - cmd_reiser.o
+a - cmd_scsi.o
+a - cmd_spi.o
+a - cmd_universe.o
+a - cmd_usb.o
+a - cmd_usbslave.o
+a - cmd_menu.o
+a - cmd_vfd.o
+a - command.o
+a - console.o
+a - devices.o
+a - dlmalloc.o
+a - docecc.o
+a - environment.o
+a - env_common.o
+a - env_nand.o
+a - env_dataflash.o
+a - env_flash.o
+a - env_eeprom.o
+a - env_nvram.o
+a - env_nowhere.o
+a - exports.o
+a - flash.o
+a - fpga.o
+a - ft_build.o
+a - hush.o
+a - kgdb.o
+a - lcd.o
+a - lists.o
+a - lynxkdi.o
+a - memsize.o
+a - miiphybb.o
+a - miiphyutil.o
+a - s_record.o
+a - serial.o
+a - soft_i2c.o
+a - soft_spi.o
+a - spartan2.o
+a - spartan3.o
+a - usb.o
+a - usb_kbd.o
+a - usb_storage.o
+a - virtex2.o
+a - xilinx.o
+a - crc16.o
+a - xyzModem.o
+a - cmd_mac.o
+a - cmd_hello.o
+make[1]: Leaving directory `/home/book/tmp/u-boot-1.1.6_100ask/common'
+UNDEF_SYM=`arm-linux-objdump -x lib_generic/libgeneric.a board/100ask24x0/lib100ask24x0.a cpu/arm920t/libarm920t.a cpu/arm920t/s3c24x0/libs3c24x0.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a rtc/librtc.a dtt/libdtt.a drivers/libdrivers.a drivers/nand/libnand.a drivers/nand_legacy/libnand_legacy.a drivers/usb/libusb.a drivers/sk98lin/libsk98lin.a common/libcommon.a |sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`;\
+		cd /home/book/tmp/u-boot-1.1.6_100ask && arm-linux-ld -Bstatic -T /home/book/tmp/u-boot-1.1.6_100ask/board/100ask24x0/u-boot.lds -Ttext 0x33F80000  $UNDEF_SYM cpu/arm920t/start.o \
+			--start-group lib_generic/libgeneric.a board/100ask24x0/lib100ask24x0.a cpu/arm920t/libarm920t.a cpu/arm920t/s3c24x0/libs3c24x0.a lib_arm/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a net/libnet.a disk/libdisk.a rtc/librtc.a dtt/libdtt.a drivers/libdrivers.a drivers/nand/libnand.a drivers/nand_legacy/libnand_legacy.a drivers/usb/libusb.a drivers/sk98lin/libsk98lin.a common/libcommon.a --end-group -L /work/tools/gcc-3.4.5-glibc-2.3.6/lib/gcc/arm-linux/3.4.5 -lgcc \
+			-Map u-boot.map -o u-boot
+arm-linux-objcopy --gap-fill=0xff -O srec u-boot u-boot.srec
+arm-linux-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin

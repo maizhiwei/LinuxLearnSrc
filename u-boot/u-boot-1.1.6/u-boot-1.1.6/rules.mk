@@ -25,7 +25,21 @@
 
 _depend:	$(obj).depend
 
+#basename $f 意思是去掉路径后的文件名
+#sed -e 's/\(.*\)\.\w/\1.o/';  
+#  /匹配字符/替换字符/
+# (.*).\w: (.*):代表任意个任意字符,小括将其标识为\1, 
+# \. : \代表脱义符，\.代表 符号.
+# \w : 代表[A-Za-z0-9]
+# \1.o : 对应着把匹配上/1.w 替换成 1.o
+# 以下shell命令用于生成 依赖关系，并输出到 .depend 文件 
+# $(CC) -M $(HOST_CFLAGS) $(CPPFLAGS) -MQ $(obj)$g $f >> $@ ;
+
+# 生成依赖文件只需要.c即可，不需要.o文件
+
 $(obj).depend:	$(src)Makefile $(TOPDIR)/config.mk $(SRCS)
+		@echo $(SRCS)
+		@echo “This is depend here\n\r”
 		@rm -f $@
 		@for f in $(SRCS); do \
 			g=`basename $$f | sed -e 's/\(.*\)\.\w/\1.o/'`; \

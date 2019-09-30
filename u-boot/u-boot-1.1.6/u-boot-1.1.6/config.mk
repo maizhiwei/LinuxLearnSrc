@@ -223,7 +223,7 @@ export	CONFIG_SHELL HPATH HOSTCC HOSTCFLAGS CROSS_COMPILE \
 export	TEXT_BASE PLATFORM_CPPFLAGS PLATFORM_RELFLAGS CPPFLAGS CFLAGS AFLAGS
 
 #########################################################################
-
+# 此处就已经把所有的*.S	*.c	编译成 *.o都考虑进来
 ifndef REMOTE_BUILD
 
 %.s:	%.S

@@ -21,6 +21,8 @@
 # MA 02111-1307 USA
 #
 
+#  img2srec mkimage envcrc gen_eth_addr bmp_logo
+
 BIN_FILES	= img2srec$(SFX) mkimage$(SFX) envcrc$(SFX) gen_eth_addr$(SFX) bmp_logo$(SFX)
 
 OBJ_LINKS	= environment.o crc32.o
@@ -105,6 +107,7 @@ endif
 # Include this after HOSTOS HOSTARCH check
 # so that we can act intelligently.
 #
+# 包含顶层 config.mk文件
 include $(TOPDIR)/config.mk
 
 # now $(obj) is defined
@@ -123,6 +126,13 @@ AFLAGS	   = -D__ASSEMBLY__ $(CPPFLAGS)
 CC	   = $(HOSTCC)
 STRIP	   = $(HOSTSTRIP)
 MAKEDEPEND = makedepend
+
+#  $(BINS) 是Simg2srec mkimage envcrc gen_eth_addr bmp_logo
+# 生成上述文件的
+# $(LOGO_H) 
+# 生成logo数据文件
+# subdirs
+# 不做任何事情
 
 all:	$(obj).depend $(BINS) $(LOGO_H) subdirs
 
@@ -178,6 +188,7 @@ $(obj)inca-swap-bytes.o:	$(src)inca-swap-bytes.c
 $(obj)mpc86x_clk.o:	$(src)mpc86x_clk.c
 		$(CC) -g $(CFLAGS) -c -o $@ $<
 
+# 没做任何事
 subdirs:
 ifeq ($(TOOLSUBDIRS),)
 		@:
@@ -203,14 +214,17 @@ $(obj)crc32.c:
 		@rm -f $(obj)crc32.c
 		ln -s $(src)../lib_generic/crc32.c $(obj)crc32.c
 
+# 生成logo的位图数据，把它放在include/bmp_logo.h
 $(LOGO_H):	$(obj)bmp_logo $(LOGO_BMP)
 		$(obj)./bmp_logo $(LOGO_BMP) >$@
 
 #########################################################################
 
 # defines $(obj).depend target
+# 此处直接把_depend的处理直接贴过来
 include $(SRCTREE)/rules.mk
 
+# 把依赖关系文件包含进来
 sinclude $(obj).depend
 
 #########################################################################
