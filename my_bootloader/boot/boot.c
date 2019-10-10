@@ -7,6 +7,8 @@
 extern void uart0_init(void);
 extern void puts(char * str);
 extern void nand_read(unsigned int addr, unsigned char * buf, unsigned int len);
+extern void nand_read0(unsigned int addr, unsigned char *buf, unsigned int len);
+
 extern void puthex(unsigned int val);
 static struct tag *params;
 
@@ -136,7 +138,7 @@ int main(void)
 	puts("Copy kernel form nand\n\r");
 
 	/*1. 从Nand FLASH里把内核读入内存*/
-	nand_read(0x60000, (unsigned char *)0x30007FC0, 0x200000);
+	nand_read0(0x60000, (unsigned char *)0x30007FC0, 0x200000);
 
 
 

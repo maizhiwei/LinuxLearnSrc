@@ -26,6 +26,8 @@
 #define TXD0READY   (1<<2)
 #define RXD0READY   (1)
 void nand_read(unsigned int addr, unsigned char * buf, unsigned int len);
+void nand_read0(unsigned int addr, unsigned char *buf, unsigned int len);
+
 int isBootFormNorFlash(void)
 {
 	volatile int *p = (volatile int *)0;
@@ -91,6 +93,8 @@ void nand_init(void)
 	NFCONT = (1<<4)|(1<<1)|(1<<0);
 
 }
+
+
 
 void nand_select(void)
 {
@@ -185,6 +189,116 @@ void nand_read(unsigned int addr, unsigned char * buf, unsigned int len)
 	nand_unselect();
 
 }
+
+void nand_page(unsigned int page)
+{
+	volatile int i;
+	
+	NFADDR  = page & 0xff;
+	for (i = 0; i < 10; i++);
+	NFADDR  = (page >> 8) & 0xff;
+	for (i = 0; i < 10; i++);
+	NFADDR  = (page >> 16) & 0xff;
+	for (i = 0; i < 10; i++);	
+}
+
+void nand_col(unsigned int col)
+{
+	volatile int i;
+
+	NFADDR = col & 0xff;
+	for (i = 0; i < 10; i++);
+	NFADDR = (col >> 8) & 0xff;
+	for (i = 0; i < 10; i++);
+}
+
+// 一般坏块标志都是block内的第一个page的oob区，非0xFF则坏块
+int nand_bad(unsigned int addr)
+{
+	unsigned int col  = 2048;
+	unsigned int page = addr / 2048;
+	unsigned char val;
+
+	/* 1. 选中 */
+	nand_select();
+	
+	/* 2. 发出读命令00h */
+	nand_cmd(0x00);
+	
+	/* 3. 发出地址(分5步发出) */
+	nand_col(col);
+	nand_page(page);
+	
+	/* 4. 发出读命令30h */
+	nand_cmd(0x30);
+	
+	/* 5. 判断状态 */
+	nand_wait_ready();
+
+	/* 6. 读数据 */
+	val = nand_data();
+	
+	/* 7. 取消选中 */		
+	nand_unselect();
+
+
+	if (val != 0xff)
+		return 1;  /* bad blcok */
+	else
+		return 0;
+}
+
+// 加入坏块检测的nand 读取
+void nand_read0(unsigned int addr, unsigned char *buf, unsigned int len)
+{
+	int i;
+	int col;
+	col = addr%2048;
+	///*1.选中*/
+	//nand_select();
+
+	i = 0;
+	while(i<len)
+	{
+
+		if (!(addr & 0x1FFFF) && nand_bad(addr)) /* 一个block只判断一次 */
+		{
+			addr += (128*1024);  /* 跳过当前block */
+			continue;
+		}
+
+		/* 1. 选中 */
+		nand_select();
+
+		/*2.发出读命令00h*/
+		nand_cmd(0x00);
+
+		/*3.发出地址（分5步发出）*/
+		nand_addr(addr);
+
+		/*4.发出page读命令30h*/
+		nand_cmd(0x30);
+
+		/*5.判断状态*/
+		nand_wait_ready();
+
+		/*6.读数据*/
+		for(;(col < 2048) && (i<len); col ++)
+		{	
+			buf[i] = nand_data();
+			i++;
+			addr++;
+		}
+		
+		col = 0;
+		/*7.取消选中*/
+		nand_unselect();
+	}
+
+	
+
+}
+
 #define PCLK            50000000    // init.c中的clock_init函数设置PCLK为50MHz
 #define UART_CLK        PCLK        //  UART0的时钟源设为PCLK
 #define UART_BAUD_RATE  115200      // 波特率
