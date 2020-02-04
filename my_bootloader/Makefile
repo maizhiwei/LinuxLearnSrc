@@ -23,7 +23,7 @@ LIBS += hw/hw.a
 export	TOP_DIR OBJ_NAME
 
 # 把所有目标都标记伪目标，避免因存在同名的文件导致目标不执行
-.PHONY : config unconfig clean distclean $(OBJ_NAME).bin mfclean $(LIBS)
+.PHONY : config unconfig clean distclean $(OBJ_NAME).bin mfclean $(LIBS) $(START_OBJ)
 
 # 总目标--生成镜像文件
 ALL:   $(OBJ_NAME).bin
