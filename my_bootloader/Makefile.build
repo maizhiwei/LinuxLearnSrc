@@ -1,0 +1,102 @@
+# 加载编译规则
+include $(TOPDIR)/config.mk
+
+PHONY := __build
+__build:
+
+
+obj-y :=
+subdir-y :=
+
+obj-m := 
+
+# 加载当前目录中的Makeifle
+include Makefile
+
+# obj-y := a.o b.o c/ d/
+# $(filter %/, $(obj-y))   : c/ d/
+# __subdir-y  : c d
+# subdir-y    : c d
+
+# 获取当前obj-y中的目录文件
+__subdir-y	:= $(patsubst %/,%,$(filter %/, $(obj-y)))
+subdir-y	+= $(__subdir-y)
+
+# c/built-in.a d/built-in.a
+# 得到当前obj-y中的目录下的built-in.o文件路径
+subdir_objs := $(foreach f,$(subdir-y),$(f)/built-in.a)
+
+# a.o b.o
+cur_objs := $(filter-out %/, $(obj-y))
+dep_files := $(foreach f,$(cur_objs),.$(f).d)
+dep_files := $(wildcard $(dep_files))
+
+# 如果obj-m为非空，则需加入依赖文件
+ifneq ($(obj-m),)
+	mcur_objs := $(filter-out %/, $(obj-m))
+	mdep_files := $(foreach f,$(mcur_objs),.$(f).d)
+	mdep_files := $(wildcard $(mdep_files))
+	
+	ifneq ($(mdep_files),)
+	
+	dep_files += $(mdep_files)
+	
+	endif
+	
+endif
+
+
+
+
+
+
+
+# 加载依赖文件
+ifneq ($(dep_files),)
+$(warning  $(dep_files))
+  include $(dep_files)
+endif
+	
+
+PHONY += $(subdir-y)
+PHONY += _built-in
+
+__build : $(subdir-y) _built-in $(obj-m) 
+
+# 1.到obj-y的目录下执行Makefile.build,相当于递归调用，为的是目录下的build-in.o文件
+$(subdir-y):
+	make -C $@ -f $(TOPDIR)/Makefile.build
+
+
+
+
+# 如果当下有.o文件需要生成的话，则生成built-in.a
+ifneq ($(cur_objs),)
+
+# 2. 把当前目录下的.o文件，集成为当前目录下的build-in.a文件
+_built-in : $(cur_objs) 
+	 $(AR) $(ARFLAGS) built-in.a $^
+			
+		
+else
+	
+_built-in :
+	 @echo $(shell pwd); \
+	 echo "NOOOOOOOOOOOOOOOOO built in"
+
+endif
+
+
+
+
+
+
+# makefile变量在shell中是文本替换
+dep_file = .$@.d
+
+# .c -> .o   .S -> .o 生成规则
+%.o : %.c
+	$(CC) $(CFLAGS) -Wp,-MD,$(dep_file) -c -o $@ $<
+%.o:%.S
+	${CC}  $(CFLAGS) -Wp,-MD,$(dep_file) -c -o $@ $<	
+.PHONY : $(PHONY) 
